@@ -1,0 +1,114 @@
+@import "./mixin";
+// User info main wrapper style
+.user-info-stepper-wrapper {
+  background-color: #ffffff;
+  max-width: 100%;
+  padding: 16px;
+  min-height: 83vh;
+  .user-form-wrapper {
+    padding: 20px;
+  }
+  // Top horizontal stepper style
+  .horizontal-stepper {
+    max-width: 80%;
+    margin: 20px auto;
+    // Mobile media query
+    @include mq("phone") {
+      max-width: 100%;
+    }
+  }
+
+  // First 2 step style
+  .user-info-step,
+  .address-info-step {
+    .MuiGrid-item {
+      @include mq("phone") {
+        min-width: 100%;
+      }
+    }
+    .error-msg {
+      width: fit-content;
+      margin: 5px 2px;
+      font-size: 13px;
+    }
+    input[type="date"]:in-range::-webkit-datetime-edit-year-field,
+    input[type="date"]:in-range::-webkit-datetime-edit-month-field,
+    input[type="date"]:in-range::-webkit-datetime-edit-day-field,
+    input[type="date"]:in-range::-webkit-datetime-edit-text {
+      color: transparent;
+      &:focus::-webkit-datetime-edit {
+        color: black !important;
+      }
+    }
+    .gender-radio-option,
+    .marital-status-radio-option {
+      text-align: left;
+      label[for="gender"],
+      label[for="maritalStatus"] {
+        color: gray;
+      }
+      div[role="radiogroup"] {
+        flex-direction: row;
+        .MuiFormControlLabel-labelPlacementEnd {
+          @include mq("phone") {
+            margin-right: 35px;
+          }
+        }
+      }
+    }
+    .MuiSelect-select {
+      max-height: 40px;
+      height: 100%;
+      padding: 8.5px 14px;
+      text-align: left;
+    }
+    #city_label,
+    #state_label,
+    #country_label {
+      top: -3px;
+      line-height: 15px;
+    }
+  }
+
+  // Last step style
+  .user-information-table {
+    .user-info {
+      padding-top: 0;
+      padding-bottom: 0;
+      .user-info-text {
+        margin-top: 0;
+        display: flex;
+        border-bottom: 1px solid #d7d6d6;
+        span,
+        p {
+          width: 50%;
+          color: #000;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+  .data-success-title {
+    font-size: 25px;
+    text-transform: capitalize;
+    color: green;
+    @include mq("phone") {
+      font-size: 20px;
+    }
+  }
+
+  // Below Next & back btn style
+  .submit-btn-wrapper {
+    padding-left: 20px;
+    display: flex;
+    .back-btn {
+      margin-right: 20px;
+      &.disabled {
+        background-color: #e4e4e4;
+      }
+    }
+  }
+  .select-box-wrapper {
+    width: 100%;
+  }
+}

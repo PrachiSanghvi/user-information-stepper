@@ -1,0 +1,86 @@
+
+/* MIXIN : MEDIA QUERIES
+ *    EX : @include mq( 'lap-and-up' ) { CODE }
+ * ------------------------------------------------------------------------- */
+$phone: "screen and (max-width: 767px)";
+$phone-portrait: "screen and (max-width: 551px)";
+$phone-landscape: "screen and (min-width: 552px) and (max-width: 767px)";
+$tablet: "screen and (min-width: 768px) and (max-width: 1024px)";
+$phone-and-tablet: "screen and (max-width: 1024px)";
+$tablet-and-up: "screen and (min-width: 768px)";
+$tablet-portrait: "screen and (min-width: 768px) and (max-width: 991px)";
+$tablet-landscape: "screen and (min-width: 992px) and (max-width: 1024px)";
+$lap: "screen and (min-width: 1025px) and (max-width: 1199px)";
+$lap-and-up: "screen and (min-width: 1025px)";
+$desk-and-up: "screen and (min-width: 1200px)";
+$large-desk-and-up: "screen and (min-width: 1400px)";
+$desk-and-down: "screen and (max-width: 1335px)";
+$lap-and-desk: "screen and (min-width: 1025px) and (max-width: 1679px)";
+$phone-min: "screen and (max-width: 375px)";
+@mixin mq($alias) {
+  @if $alias == "phone" {
+    @media #{$phone} {
+      @content;
+    }
+  } @else if $alias == "phone-portrait" {
+    @media #{$phone-portrait} {
+      @content;
+    }
+  } @else if $alias == "phone-landscape" {
+    @media #{$phone-landscape} {
+      @content;
+    }
+  } @else if $alias == "tablet" {
+    @media #{$tablet} {
+      @content;
+    }
+  } @else if $alias == "phone-and-tablet" {
+    @media #{$phone-and-tablet} {
+      @content;
+    }
+  } @else if $alias == "tablet-and-up" {
+    @media #{$tablet-and-up} {
+      @content;
+    }
+  } @else if $alias == "tablet-portrait" {
+    @media #{$tablet-portrait} {
+      @content;
+    }
+  } @else if $alias == "tablet-landscape" {
+    @media #{$tablet-landscape} {
+      @content;
+    }
+  } @else if $alias == "lap" {
+    @media #{$lap} {
+      @content;
+    }
+  } @else if $alias == "lap-and-up" {
+    @media #{$lap-and-up} {
+      @content;
+    }
+  } @else if $alias == "desk-and-up" {
+    @media #{$desk-and-up} {
+      @content;
+    }
+  } @else if $alias == "lap-and-desk" {
+    @media #{$lap-and-desk} {
+      @content;
+    }
+  } @else if $alias == "large-desk-and-up" {
+    @media #{$large-desk-and-up} {
+      @content;
+    }
+  } @else if $alias == "desk-and-down" {
+    @media #{$desk-and-down} {
+      @content;
+    }
+  } @else if $alias == "phone-min" {
+    @media #{$phone-min} {
+      @content;
+    }
+  } @else {
+    @media (#{$alias}) {
+      @content;
+    }
+  }
+}
