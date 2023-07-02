@@ -186,7 +186,7 @@ const AddressDetail = (props) => {
   )
 }
 
-// Initalial valies
+// Initalial values
 AddressDetail.initialValues = {
   addressLine1: '',
   addressLine2: '',
